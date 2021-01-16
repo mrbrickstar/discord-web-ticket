@@ -10,7 +10,7 @@ const requestIp = require('request-ip');
 var multer  = require('multer')
 const fs = require("fs");
 const { fileURLToPath } = require("url");
-var token = "Nzk0NTg5MzI5NjM2MzI3NDM2.X-9A-g.zWWcHbyncO8H5_o7a1jmn2m8Vaw" //Login-Token for the Bot
+var token = "Your_Token" //Login-Token for the Bot
 var app = express()
 
 //Webserver Code
