@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta property="og:title" content="LukeAirTool Helpcenter"/>
+    <meta property="og:description" content="Having problems with LukeAirTool? Maybe you find the solution on this site.">
+    <meta property="og:url" content="http://lukeairtool.net">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#00b4ff">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://lukeairtool.net/style.css">
+    <link rel="stylesheet" href="http://localhost/help/help.css">
+    <link rel="stylesheet" href="/ticket.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>LukeAirTool Helpcenter</title>
+</head>
+<script>function auto_grow(element) {
+    element.style.height = "5px";
+    element.style.height = (element.scrollHeight)+"px";
+}
+
+function onload(){
+ var i = document.getElementById('ticket-content').innerHTML;  
+ console.log(i)
+ if(i.includes("This ticket will close in 5 seconds")){
+     setTimeout(()=>{
+        window.location.href = "http://localhost:5500";
+     },6000)
+ }
+}</script>
+<header style="height: 100%;">
+    <ul>
+        <li id="Branding" style="margin-left: 100px;float: left !important; font-size: 50px !important;"><a href="#" style="float: left !important; font-size: 35px !important; animation: none; cursor: default;"><img style="height: 50px; margin-right: 20px; margin-bottom: -13px;" src="http://localhost/uploads/images/YourLogo.png">YourBrand Help</a></li>
+        <li><a href="#">Menu 1</a></li>
+        <li><a href="#">Menu 2</a></li>
+        <li><a href="#">Menu 3</a></li>
+        <li><a href="#">Menu 4</a></li>
+    </ul>
+</header>
+<body onload="onload()">
+<div id="ticket_name">#--TICKETNAME--#:#--TICKETTOPIC--#</div><form #--FORMACTION_DELETE--# method="POST"><button id="close">Close Ticket</button></form>
+<div id="created_on">Created on #--DATE--#</div>
+<div id="ticket-content">
+    <div id="content">
+        <div id="name"><img src="https://i.stack.imgur.com/34AD2.jpg">You</div>
+        <div id="date">Now</div>
+        <form #--FORMACTION--# id="Form" enctype="multipart/form-data" method="POST">
+            <textarea type="text" id="desc" oninput="auto_grow(this)" placeholder="Write your answere" name="desc"></textarea>
+            <label id="pic_input">
+            <input type="file" id="files" name="desc" enctype="multipart/form-data" accept="image/*" multiple>
+            Upload Picture
+            </label>
+            <output id="list"></output>
+
+<script>
+  function handleFileSelect(evt) {
+    var files = evt.target.files;
+   for (var i = 0, f; f = files[i]; i++) {
+      if (!f.type.match('image.*')) {
+        continue;
+      }
+      var reader = new FileReader();
+      reader.onload = (function(theFile) {
+        return function(e) {
+          var span = document.createElement('span');
+          span.innerHTML = ['<img class="thumb" src="', e.target.result,
+                            '" title="', escape(theFile.name), '"/>'].join('');
+          document.getElementById('list').insertBefore(span, null);
+        };
+      })(f);
+      reader.readAsDataURL(f);
+    }
+  }
+
+  document.getElementById('files').addEventListener('change', handleFileSelect, false);
+</script>
+            <section id="yikes" style="font-size: 10px;margin-left: -35px">Press Shift + Enter To start a new line, press Enter to submit</section>
+        </form>
+    </div>
+ #--REPLACE--#
+</div>
+<script>
+    function submitOnEnter(event){
+        if(event.which === 13 && !event.shiftKey){
+            document.getElementById("Form").submit();
+        }
+    }
+    
+    document.getElementById("desc").addEventListener("keypress", submitOnEnter);
+    </script>
+<div id="other_informs">
+    <div id="header">Created on</div>
+    <div id="sub"> #--DATE--#</div>
+    <br>
+    <div id="header">Created in</div>
+    <div id="sub">#--Country--#</div>
+    <br>
+    <div id="header">Claimed by</div>
+    <div id="sub">#--MODERATOR--#</div>
+</div>
+<!-- Footer -->
+<footer style="margin-top: 250px">
+    <div id="footer-center">
+    <div id="footer-left">
+        <div id="footer-left-header">Follow us on</div>
+<ul>
+    <li>
+    <a href="https://discord.gg/BACWQFt6BS" class="discord" rel="noopener">
+    <svg class="dflt" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+      <path d="M372.4 168.7s-33.3-26.1-72.7-29.1l-3.5 7.1c35.6 8.7 51.9 21.2 69 36.5-29.4-15-58.5-29.1-109.1-29.1s-79.7 14.1-109.1 29.1c17.1-15.3 36.5-29.2 69-36.5l-3.5-7.1c-41.3 3.9-72.7 29.1-72.7 29.1s-37.2 54-43.6 160c37.5 43.3 94.5 43.6 94.5 43.6l11.9-15.9c-20.2-7-43.1-19.6-62.8-42.3 23.5 17.8 59.1 36.4 116.4 36.4S349 332 372.6 314.1c-19.7 22.7-42.6 35.3-62.8 42.3l11.9 15.9s57-.3 94.5-43.6c-6.6-106-43.8-160-43.8-160zM208.7 299.6c-14.1 0-25.5-13-25.5-29.1s11.4-29.1 25.5-29.1 25.5 13 25.5 29.1-11.4 29.1-25.5 29.1zm94.6 0c-14.1 0-25.5-13-25.5-29.1s11.4-29.1 25.5-29.1 25.5 13 25.5 29.1-11.5 29.1-25.5 29.1z" fill="#FFF"></path>
+    </svg>
+  </a>
+  </li>
+  <li>
+      <a href="https://www.youtube.com/channel/UC2smY6NWPXlruDorvV53Z_Q"><img src="../images/YT.svg"></a>
+  </li>
+</ul>
+</div>
+
+<div id="footer-right">
+    <div id="footer-right-header">
+        About us
+    </div>
+    <ul>
+        <li><a href="#">Your Link here</a></li>
+        <li><a href="#">Your Link here</a></li>
+        <li><a href="#">Your Link here</a></li>
+    </ul>
+</div>
+    </div>
+    <div id="footer-liner"></div>
+<div id="footer-copyandstuff" style="float: left; display: block;">
+&copy 2020 Bendix
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta property="og:title" content="LukeAirTool Helpcenter"/>
+    <meta property="og:description" content="Having problems with LukeAirTool? Maybe you find the solution on this site.">
+    <meta property="og:url" content="http://lukeairtool.net">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#00b4ff">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./help.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>LukeAirTool Helpcenter</title>
+</head>
+<style>
+a{
+    z-index: 100;
+}
+    @keyframes ausklappen {
+         
+    0% {
+
+    transform: scaleY(0);
+    margin-top: -55px;
+    opacity: 0;
+    line-height: 0;
+    margin-bottom: 0px;
+    width: 88%;
+  }
+  100% {
+    transform: scaleY(1);
+    margin-top: -20px;
+    max-height: 10000px;
+    width: 88%;
+    opacity: 1;
+
+    line-height: 1.3;
+    margin-bottom: 0px;
+  }
+    }
+    @keyframes einklappen {
+         
+         0% {
+    transform: scaleY(1);
+    margin-top: -20px;
+    max-height: 10000px;
+    width: 88%;
+    opacity: 1;
+    line-height: 1.3;
+    margin-bottom: 0px;
+   }
+   100% {
+    transform: scaleY(0);
+    margin-top: -55px;
+    opacity: 0;
+    line-height: 0;
+    margin-bottom: 0px;
+    width: 88%;
+   }
+     }
+</style>
+<script>
+    function toogle(args){
+      var x = document.getElementById("body-sec-buttons-desc-"+args)
+  if (x.style.cool =="Ja" ) {
+    x.style = "animation: 0.5s steps(40) 0s 1 normal forwards running einklappen;"
+    x.style.cool = "Nein"
+  } else {
+    x.style.animation ="ausklappen 0.5s steps(40) 0s 1 normal forwards"
+    x.style.cool ="Ja"
+  }
+    }
+</script>
+<body style=" margin: 0;font-family: Work Sans;font-size: 20px;margin-top: 0px;width: 100%;background-color: #343a40;">
+    <header style="height: 100%;">
+        <ul>
+            <li id="Branding" style="margin-left: 100px;float: left !important; font-size: 50px !important;"><a href="#" style="float: left !important; font-size: 35px !important; animation: none; cursor: default;"><img style="height: 50px; margin-right: 20px; margin-bottom: -13px;" src="../images/LOGO.png">LukeAirTool Help</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="http://lukeairtool.net/api/register.html">Register</a></li>
+            <li><a href="#sec-team-header">Team</a></li>
+            <li><a href="#download">Download</a></li>
+        </ul>
+    </header>
+    <div id="container">
+    <div id="body-header">Need help?</div>
+    <div id="body-subtext">You have a problem with LukeAirTool? Maybe this page can help you</div>
+    <div id="body-sec-buttons">
+        <div id="button" onclick='toogle("1")'><section class="text">App not returning to normal after I press the minimize button (three lines located top right of the window)</section><img src="../images/plus.svg"></div>
+        <div id="body-sec-buttons-desc-1" name="one">
+            - Go to your display settings and check the SCALE and LAOUT<br>
+            - Set it to 100%<br>
+            - If it's on 100% already, set it to something else, then apply. Then change it back to 100% and apply<br>
+        </div>
+
+        <div id="button" onclick='toogle("2")'><section class="text">No audio playing?</section><img src="../images/plus.svg"></div>
+        <div id="body-sec-buttons-desc-2" name="one"><section style="font-weight: bold;">Old version</section>Please make sure you are on the latest version. Anything above 1.2.8.8 as any version bellow that will not work anymore<br><br>
+            <section style="font-weight: bold;">Windows Media Player</section>
+            A user managed to fix this issue by checking his codecs. See if windows media player can actually play mp3 files
+<br><br>
+            FIX<br>
+            1. Open CMD, By opening the start menu and type in CMD<br>
+            2. run this command:
+            <section id="code" style="background-color: #018cc8;;
+            border: 3px solid #0176a8;margin-right:100px; border-radius: 5px; padding-left: 5px;">Dism /Online /Enable-Feature /FeatureName:WindowsMediaPlayer /All</section>
+        </div>
+        <div id="button" onclick='toogle("3")'><section class="text">Antivirus is detecting the app as a virus</section><img src="../images/plus.svg"></div>
+        <div id="body-sec-buttons-desc-3" name="one">
+            - Please let us know who makes your antivirus as we will need to contact the provider. Contact us via <a href="https://discord.com/channels/757754123776032840/757754544934486098" style="font-weight: 500;font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif; background-color: #3C414F; text-decoration: none;color: #7289CF; cursor: pointer;">#help--support</a><br>
+            - Add <a href="https://lukeairtool.net/">https://lukeairtool.net/</a> to ignore list on your antivirus<br>
+            - Add AirTool.exe to ignore list on your antivirus
+        </div>
+        <div id="button" onclick='toogle("4")'><section class="text">My app is showing an error when I try to use PaxSim</section><img src="../images/plus.svg"></div>
+        <div id="body-sec-buttons-desc-4" name="one">
+            Check if you have done the following points:<br>
+            -Did you have installed FSUIPC and have it <section style="text-decoration: underline; display: inline;">running</section><br>
+            -Did you have exported the files in the .rar-file correctly and not in a temp-folder
+        </div>
+        <div id="more-problems">
+            <div id="more-problems-header">
+                Still having problems?
+            </div>
+            <div id="more-problems-sub">
+               Open a web-ticket:
+            </div>
+            <script>function submit(){
+                var sub = document.forms["Form"]["sub"].value
+                var desc = document.forms["Form"]["desc"].value
+
+                if(sub == null || sub == ""){
+                    document.getElementById('error').innerHTML = "The Field \"Subject\" is empty";
+                    document.getElementById('sub').style.border ="3px solid red"
+                    return false;
+                }else{
+                    document.getElementById('sub').style.border ="3px solid #018cc8"
+                }
+                if(desc == null || desc == ""){
+                    document.getElementById('error').innerHTML = "The Field \"Description\" is empty";
+                    document.getElementById('desc').style.border ="3px solid red"
+                    return false;
+                }else{
+                    document.getElementById('sub').style.border ="3px solid #018cc8"
+                }
+                document.forms['Form'].submit();
+            }</script>
+            <form name="Form" action="http://localhost/new" method="POST">
+                <section id="form_sub">Briefly describe the issue</section>
+                <input type="text" placeholder="Subject" name="sub" id="sub"><br>
+                <section id="form_sub" style="margin-top: 5px">Describe the issue</section>
+                <textarea placeholder="Description" name="desc" id="desc1"></textarea>
+                <div id="sub_button" onclick="submit()">Submit</div>
+                <section style="color:red" id="error"></section>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<footer>
+    <div id="footer-center">
+    <div id="footer-left">
+        <div id="footer-left-header">Follow us on</div>
+<ul>
+    <li>
+    <a href="https://discord.gg/BACWQFt6BS" class="discord" rel="noopener">
+    <svg class="dflt" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+      <path d="M372.4 168.7s-33.3-26.1-72.7-29.1l-3.5 7.1c35.6 8.7 51.9 21.2 69 36.5-29.4-15-58.5-29.1-109.1-29.1s-79.7 14.1-109.1 29.1c17.1-15.3 36.5-29.2 69-36.5l-3.5-7.1c-41.3 3.9-72.7 29.1-72.7 29.1s-37.2 54-43.6 160c37.5 43.3 94.5 43.6 94.5 43.6l11.9-15.9c-20.2-7-43.1-19.6-62.8-42.3 23.5 17.8 59.1 36.4 116.4 36.4S349 332 372.6 314.1c-19.7 22.7-42.6 35.3-62.8 42.3l11.9 15.9s57-.3 94.5-43.6c-6.6-106-43.8-160-43.8-160zM208.7 299.6c-14.1 0-25.5-13-25.5-29.1s11.4-29.1 25.5-29.1 25.5 13 25.5 29.1-11.4 29.1-25.5 29.1zm94.6 0c-14.1 0-25.5-13-25.5-29.1s11.4-29.1 25.5-29.1 25.5 13 25.5 29.1-11.5 29.1-25.5 29.1z" fill="#FFF"></path>
+    </svg>
+  </a>
+  </li>
+  <li>
+      <a href="https://www.youtube.com/channel/UC2smY6NWPXlruDorvV53Z_Q"><img src="../images/YT.svg"></a>
+  </li>
+</ul>
+</div>
+
+<div id="footer-right">
+    <div id="footer-right-header">
+        About us
+    </div>
+    <ul>
+        <li><a href="http://lukeairtool.net/data.html">Terms of service</a></li>
+        <li><a href="#">Support</a></li>
+        <li></li>
+    </ul>
+</div>
+    </div>
+    <div id="footer-liner"></div>
+<div id="footer-copyandstuff" style="float: left; display: block;">
+&copy 2020 LukeAirTool Name and Logo are protected by the DMCA<br><a href="http://lukeairtool.net/data.html">Terms of service</a>
+</div>
+<a class="copyrighted-badge"  title="Copyrighted.com Registered &amp; Protected" target="_blank" style="text-align: center;" href="https://www.copyrighted.com/website/Celk9DhurtUiiy4h"><img style="padding-bottom: 50px;" alt="Copyrighted.com Registered &amp; Protected" border="0" width="125" height="25" srcset="https://static.copyrighted.com/badges/125x25/03_1_2x.png 2x" src="https://static.copyrighted.com/badges/125x25/03_1.png" /></a><script src="https://static.copyrighted.com/badges/helper.js"></script>
+</footer>
+</body>
+</html>

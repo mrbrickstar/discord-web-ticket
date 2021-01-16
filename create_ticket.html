@@ -1,0 +1,103 @@
+<style>
+    @font-face {
+  font-family: "Work Sans light";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/worksans/v8/QGY_z_wNahGAdqQ43RhVcIgYT2Xz5u32KxfXBi8Jpg.woff2)
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/worksans/v8/QGY_z_wNahGAdqQ43RhVcIgYT2Xz5u32K0nXBi8Jpo3fKyE.woff2)
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+form {
+  margin-top: 30px;
+  width: 92%;
+  margin-left: 5%;
+}
+
+input[type="text"] {
+  width: 100%;
+  height: 30px;
+  border: 3px solid grey;
+  padding-left: 5px;
+  font-family: "Work Sans";
+  font-size: 20px;
+}
+
+input[type="submit"] {
+  border: 1px solid red;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 102%;
+}
+
+#sub_button {
+  width: 100%;
+  text-align: center;
+  background-color: #00b4ff;
+  border: 3px solid#018cc8;
+  height: 30px;
+  padding-top: 5px;
+  cursor: pointer;
+}
+
+textarea#desc1,
+textarea {
+  width: 100%;
+  height: 130px;
+  border: 3px solid grey;
+  padding-left: 5px;
+  font-family: "Work Sans";
+  resize: none;
+  font-size: 20px;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+</style>
+<script>function submit(){
+    var sub = document.forms["Form"]["sub"].value
+    var desc = document.forms["Form"]["desc"].value
+
+    if(sub == null || sub == ""){
+        document.getElementById('error').innerHTML = "The Field \"Subject\" is empty";
+        document.getElementById('sub').style.border ="3px solid red"
+        return false;
+    }else{
+        document.getElementById('sub').style.border ="3px solid #018cc8"
+    }
+    if(desc == null || desc == ""){
+        document.getElementById('error').innerHTML = "The Field \"Description\" is empty";
+        document.getElementById('desc').style.border ="3px solid red"
+        return false;
+    }else{
+        document.getElementById('sub').style.border ="3px solid #018cc8"
+    }
+    document.forms['Form'].submit();
+}</script>
+<form name="Form" action="http://localhost/new" method="POST">
+    <section id="form_sub">Briefly describe the issue</section>
+    <input type="text" placeholder="Subject" name="sub" id="sub"><br>
+    <section id="form_sub" style="margin-top: 5px">Describe the issue</section>
+    <textarea placeholder="Description" name="desc" id="desc1"></textarea>
+    <div id="sub_button" onclick="submit()">Submit</div>
+    <section style="color:red" id="error"></section>
+</form>
