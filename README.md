@@ -19,7 +19,7 @@ This was originally created for LukeAirTool.net. So there might be some names or
 2. Install node.js [here](https://nodejs.org/en/)
 3. Install all necessary Packages (express, discord.js, multer, path, fs, node-iplocate, request-ip)
 4. Run the script with `node index.js`
-5. 
+
 # Configure the Tool
 To customize the tool to your brand or server, follow this steps
 
